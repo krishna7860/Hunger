@@ -32,6 +32,10 @@ const FoodSchema = new mongoose.Schema({
       "Please add a valid email",
     ],
   },
+  book: {
+    type: Boolean,
+    default: false,
+  },
   address: {
     type: String,
     required: [true, "Please add an address"],

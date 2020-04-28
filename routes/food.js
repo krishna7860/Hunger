@@ -23,7 +23,7 @@ const router = express.Router();
 
 router.route("/radius/:zipcode/:distance").get(getFoodInRadius);
 
-router.route("/:id/photo").put(hotelPhotoUpload);
+router.route("/:id/photo").post(hotelPhotoUpload);
 
 router
   .route("/")

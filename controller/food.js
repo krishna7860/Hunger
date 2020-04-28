@@ -92,6 +92,7 @@ exports.getFoodInRadius = asyncHandler(async (req, res, next) => {
     location: {
       $geoWithin: { $centerSphere: [[lng, lat], radius] },
     },
+    book: false,
   });
 
   res.status(200).json({
@@ -117,7 +118,7 @@ exports.hotelPhotoUpload = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse(`Please Upload a File`, 400));
   }
 
-  const file = req.files.file;
+  const file = req.files.filepond;
 
   // Make sure image is a photo
   if (!file.mimetype.startsWith("image")) {
